@@ -1,0 +1,15 @@
+woblag:
+    image: couchquid/woblag:latest
+    volumes:
+        - ./Caddyfile:/etc/Caddyfile
+        - ~/.certs:/etc/.caddy
+    environment:
+        - REPO_URL=<your-repo-url>
+        - WEBHOOK_SECRET=<webhook-secret>
+        - TLS_EMAIL=<your email>
+        - HUGO_BASEURL=<your baseurl>
+        - HUGO_THEME=stickig
+    ports:
+        - 80:80
+        - 443:443
+    restart: always

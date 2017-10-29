@@ -1,0 +1,22 @@
+<your.domain> {
+    root /www/public
+
+    git {
+        repo {$REPO_URL}
+        path ../src
+        hook /webhook {$WEBHOOK_SECRET}
+        args --recurse-submodules
+        then hugo --destination=/www/public --theme={$HUGO_THEME} --baseURL={$HUGO_BASEURL}
+    }
+
+    tls {$TLS_EMAIL} {
+        max_certs 10
+    }
+
+    log ./log/access.log
+    errors ./log/errors.log
+}
+
+<www.your.domain> {
+    redir <your.domain>
+}
