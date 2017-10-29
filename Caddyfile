@@ -1,4 +1,4 @@
-<your.domain> {
+<www.your.domain> {
     root /www/public
 
     git {
@@ -17,6 +17,6 @@
     errors ./log/errors.log
 }
 
-<www.your.domain> {
-    redir <your.domain>
+<your.domain> {
+    redir <www.your.domain>
 }
