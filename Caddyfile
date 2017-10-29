@@ -13,8 +13,8 @@
         max_certs 10
     }
 
-    log ./log/access.log
-    errors ./log/errors.log
+    log /www/public/log/access.log
+    errors /www/public/log/errors.log
 }
 
 <your.domain> {

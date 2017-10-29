@@ -42,7 +42,7 @@ ADD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${H
 RUN tar -xf /tmp/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz -C /tmp \
     && mv /tmp/hugo /usr/bin/hugo
 
-RUN mkdir -p /www/public
+RUN mkdir -p /www/public/log
 
 WORKDIR /www
 
